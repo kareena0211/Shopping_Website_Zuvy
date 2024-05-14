@@ -1,6 +1,10 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import { faker } from "@faker-js/faker";
 import { CardReducer } from "../reducer/CardReducer";
+
+
+
+
 export const CartContext = createContext();
 
 function CartContextProvider({ children }) {

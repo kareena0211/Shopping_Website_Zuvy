@@ -1,23 +1,20 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CartContext } from "../context/cartContext";
+import CartCard from "./CartCard";
 const Cart = () => {
-  return (
-    <div>
-      <div>
-        <img src="" alt="" />
+  const {
+    shopping: { cart },
+  } = useContext(CartContext);
 
-        <h1>Name</h1>
-        <p>Price</p>
-        <select name="quantity" id="quantity">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <button>Delete</button>
-    </div>
+  const cartCard = cart.map((item) => {
+    return <CartCard key={item.id} item={item} />;
+  });
+  return (
+    <>
+      <section className="grid grid-cols-4 p-5  gap-6 bg-yellow-100">
+        {cartCard}
+      </section>
+    </>
   );
 };
 
