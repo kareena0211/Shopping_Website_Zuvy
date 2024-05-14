@@ -13,7 +13,9 @@ const Products = () => {
   });
 
   return (
-    <div className="grid grid-cols-4 p-5  gap-6 bg-yellow-100">{cards}</div>
+    <div className="grid grid-cols-4 p-5  gap-6 bg-yellow-100 mt-10">
+      {cards}
+    </div>
   );
 };
 

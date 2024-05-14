@@ -18,24 +18,22 @@ const Header = ({ isCart, setIsCart }) => {
     setBackButton(false);
   }
   return (
-    <>
-      <header className="bg-[#3b0764]">
-        <nav className=" text-yellow-100 flex justify-between p-3 text-lg font-sans mx-4">
-          <h1>Product Website</h1>
-          <div>
-            {backButton ? (
-              <button onClick={backToHome} className="mr-10">
-                Back to Home
-              </button>
-            ) : (
-              ""
-            )}
+    <header className="bg-[#3b0764]  fixed w-full top-0 ">
+      <nav className=" text-yellow-100 flex justify-between p-3 text-lg font-sans mx-4">
+        <h1>Product Website</h1>
+        <div>
+          {backButton ? (
+            <button onClick={backToHome} className="mr-10">
+              Back to Home
+            </button>
+          ) : (
+            ""
+          )}
 
-            <button onClick={handelCartButton}>Cart({cart.length})</button>
-          </div>
-        </nav>
-      </header>
-    </>
+          <button onClick={handelCartButton}>Cart({cart.length})</button>
+        </div>
+      </nav>
+    </header>
   );
 };
 

@@ -1,7 +1,17 @@
 import React from "react";
+import { CartContext } from "../context/cartContext";
+import { useContext } from "react";
 
 const CartCard = ({ item }) => {
   const { image, price, productName } = item;
+  const { shopping:{cart}, dispatch } = useContext(CartContext);
+
+  const handelDelete = () => {
+    dispatch({
+      type: "delete",
+      id: item.id,
+    });
+  };
   return (
     <>
       <div className="shadow-lg p-4 border border-purple-300">
@@ -23,7 +33,10 @@ const CartCard = ({ item }) => {
           <option value="5">5</option>
         </select>
         <div>
-          <button className="bg-[#2e1065] text-[#fef3c7] p-2 rounded-lg">
+          <button
+            onClick={handelDelete}
+            className="bg-[#2e1065] text-[#fef3c7] p-2 rounded-lg"
+          >
             Delete
           </button>
         </div>

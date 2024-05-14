@@ -11,7 +11,7 @@ const Cart = () => {
   });
   return (
     <>
-      <section className="grid grid-cols-4 p-5  gap-6 bg-yellow-100">
+      <section className="grid grid-cols-4 p-5  gap-6 bg-yellow-100 mt-10">
         {cartCard}
       </section>
     </>

@@ -5,9 +5,13 @@ import { CartContext } from "../context/cartContext";
 const Card = ({ data }) => {
   const { productName, description, image, price } = data;
 
-  const { dispatch } = useContext(CartContext);
+  const {
+    shopping: { cart },
+    dispatch,
+  } = useContext(CartContext);
 
   const addToCart = () => {
+    if (cart.includes(data)) return;
     dispatch({
       type: "add",
       product: data,
