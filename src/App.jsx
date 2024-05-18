@@ -9,11 +9,11 @@ const App = () => {
   const [isCart, setIsCart] = useState(false);
   return (
     <div>
-      {/*<CartContextProvider>
+      <CartContextProvider>
         <Header isCart={isCart} setIsCart={setIsCart} />
         {isCart ? <Cart /> : <Products />}
-  </CartContextProvider>*/}
-      <Login />
+      </CartContextProvider>
+      {/*<Login />*/}
     </div>
   );
 };
